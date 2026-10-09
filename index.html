@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FB Checker</title>
 <style>
-body{font-family:Arial;text-align:center;padding:30px;background:#f0f2f5}
-.box{background:white;padding:20px;border-radius:12px;max-width:400px;margin:auto;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
-input{width:90%;padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:8px}
-button{background:#1877f2;color:white;padding:12px 20px;border:none;border-radius:8px;width:95%;font-weight:bold}
-#result{margin-top:15px;font-weight:bold;color:green}
+body{font-family:Arial;text-align:center;background:#f0f2f5;}
+.box{background:white;padding:20px;border-radius:10px;max-width:400px;margin:50px auto;}
+input{width:90%;padding:12px;margin:10px 0;border-radius:5px;border:1px solid #ccc;}
+button{background:#1877f2;color:white;padding:12px 20px;border:none;border-radius:5px;width:90%;cursor:pointer;}
+#result{margin-top:15px;font-weight:bold;}
 </style>
 </head>
 <body>
 <div class="box">
 <h2>Facebook Checker</h2>
 <p>Paste Facebook Link to Check</p>
-<input id="fbLink" placeholder="https://facebook.com/username">
+<input id="fbLink" placeholder="https://facebook.com/...">
 <button onclick="check()">Check Now</button>
 <div id="result"></div>
 </div>
 <script>
 function check(){
 let link=document.getElementById('fbLink').value;
-if(!link){document.getElementById('result').innerHTML='❌ Abeg paste link';return;}
-document.getElementById('result').innerHTML='⏳ Checking...';
-setTimeout(()=>{document.getElementById('result').innerHTML='✅ Link Valid!<br>'+link;},1500);
+if(!link){document.getElementById('result').innerHTML='Please paste link';return;}
+document.getElementById('result').innerHTML='Checking...';
+setTimeout(()=>{document.getElementById('result').innerHTML='Link: '+link;},1000);
 }
-<button onclick="Telegram.WebApp.openLink('https://facebook.com')" style="background:green;color:white;padding:15px;width:90%;border-radius:10px;">Open Facebook</button></script>
+</script>
+<button onclick="Telegram.WebApp.openLink('https://facebook.com')" style="background:green;color:white;padding:15px;width:90%;border-radius:10px;margin-top:20px;">Open Facebook</button>
 </body>
-  </html>
+</html>
